@@ -1,0 +1,21 @@
+{
+  "name": "conquer-www-by-kiinno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "start chrome 127.0.0.1:3000 && nodemon ./src/app.js"
+  },
+  "author": "Kiinno-Developer",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
+    "mongoose": "^7.0.2",
+    "pug": "^3.0.2"
+  }
+}

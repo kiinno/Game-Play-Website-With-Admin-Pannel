@@ -1,0 +1,8 @@
+mixin InfoCard(title, amount, icon_class)
+  div.info-card.d-flex.justify-content-between
+    .details
+      h3.title.m-0.p-0= title
+      p.amount=amount
+      a.text-uppercase.text-decoration-none.go(href="#") see all #{title}
+    div.icon.align-self-end
+      i(class=icon_class)

@@ -1,0 +1,46 @@
+extends ./layout
+block navbar
+block footer
+block infobar
+  +Topbar(true)
+
+
+block content
+  .justify-content-center.align-items-center.fulled-fixed.d-flex
+    div.container
+      h2.text-capitalize.text-secondary.form-title.text-center.my-4.py-4 create a new account
+      div.d-flex.justify-content-center.align-items-center
+        form.py-2(style="max-width: 700px; width: 100%", method="POST")
+          if (signup_status)
+            .alert.alert-danger=signup_status.message
+          .row.flex-column.g-3
+            .col.flex-grow-1.d-flex.gap-3
+              .form-floating.flex-grow-1
+                input.form-control#floatingInput(type="text" placeholder="First Name" name="first_name" value=getFieldValue('first_name', form_errors, form_data))
+                label(for="floatingInput") First Name 
+              .form-floating.flex-grow-1
+                input#floatingInput.form-control(type="text" placeholder="Last Name" name="last_name" value=getFieldValue('last_name', form_errors, form_data))
+                label(for="floatingInput") Last Name
+            .col.flex-grow-1
+              .form-floating
+                input#floatingInput.form-control(type="text" placeholder="@username" name="username" value=getFieldValue('username', form_errors, form_data))
+                label(for="floatingInput") Username
+            .col.flex-grow-1
+              .form-floating
+                input.form-control#floatingInput(type="email" placeholder="name@example.com" name="email" value=getFieldValue('email', form_errors, form_data))
+                label(for="floatingInput") Email address
+            .col.flex-grow-1
+              .form-floating
+                input#floatingPassword.form-control(type="password" placeholder="Password" name="password")
+                label(for="floatingPassword") Password
+            .col.flex-grow-1
+              .form-floating
+                input.form-control#floatingPassword(type="password" placeholder="Password" name="confirm_password")
+                label(for="floatingPassword") Confirm Password
+            include ./parts/form_err
+            .col.flex-grow-1.text-secondary.text-capitalize.d-flex.gap-1
+              p.m-0 already have an account?
+              a.text-decoration-none.easly-effect(href="/account/login") login now
+            .col.flex-grow-1.d-flex.gap-2
+              button(type="submit").btn.btn-primary Create Now
+              button(type="reset").btn.btn-danger Reset Form

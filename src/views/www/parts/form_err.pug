@@ -1,0 +1,5 @@
+if (form_errors.length > 0)
+  .col.flex-grow-1.text-secondary.text-capitalize.d-flex.gap-1
+    ul.m-0.pb-0.text-danger.text-capitalize
+      each v_error in form_errors
+        li.m-0=v_error.msg

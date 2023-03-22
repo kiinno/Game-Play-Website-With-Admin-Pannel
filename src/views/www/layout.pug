@@ -1,0 +1,22 @@
+include ./parts/infobar
+doctype
+html(lang="en")
+  head
+    include ../components/meta
+    block extraStyles
+      include ../components/styles
+  body
+    #loader
+      #cyrcle
+    block infobar
+      +Topbar()
+    block navbar
+      include ./parts/navbar
+
+    //- Content
+    block content
+
+    block footer
+      footer.text-white.text-center.py-3.text-capitalize all copyrights &copy; reserved to #{developer.name} whatsapp #{developer.whatsapp}
+    block extraScripts
+      include ../components/scripts

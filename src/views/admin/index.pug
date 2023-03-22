@@ -1,0 +1,11 @@
+extends ./layout
+include ./components/info-card
+
+block content
+  //- h6.text-muted.text-capitalize welcome #{auth.first_name} #{auth.last_name} 
+  div.info-list
+    .row.mx-0
+      .col.col-12.col-md-6.col-lg-4.flex-grow-1
+        +InfoCard('users', 300, "fa-solid fa-user")
+      .col.col-12.col-md-6.col-lg-4.flex-grow-1
+        +InfoCard('Sessions', 300, "fa-solid fa-user")

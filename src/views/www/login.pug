@@ -1,0 +1,31 @@
+extends ./layout
+block navbar
+block footer
+block infobar
+  +Topbar(true)
+block content
+
+  .justify-content-center.align-items-center.fulled-fixed.d-flex
+    div.container
+      h2.text-capitalize.text-center.my-4.form-title Login
+      div.d-flex.justify-content-center.align-items-center
+        form(style="max-width: 700px; width: 100%", method="POST")
+          each flash_message in flash
+            .alert.alert-danger= flash_message.message
+          .row.flex-column.g-3
+            .col.flex-grow-1
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="@username" name="username">
+                <label for="floatingInput">Username</label>
+              </div>
+            .col.flex-grow-1
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                <label for="floatingPassword">Password</label>
+              </div>
+            include ./parts/form_err
+            .col.flex-grow-1.text-secondary.text-capitalize.d-flex.gap-1
+              p.m-0 i dont have an account?
+              a.text-decoration-none.easly-effect(href="/account/signup") create now
+            .col.flex-grow-1.d-flex.gap-2
+              button(type="submit").btn.btn-primary Login

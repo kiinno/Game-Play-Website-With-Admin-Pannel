@@ -1,0 +1,27 @@
+mixin Topbar(fixed)
+  div(class=fixed ? 'infobar text-white py-1 position-absolute w-100' : 'infobar text-white py-1')
+    .container
+      .d-flex.justify-content-between
+        div#theme-switch.easly-effect
+          i.fa-solid.fa-moon
+
+        div.text-uppercase.d-flex.action-links
+          a.text-decoration-none.badge.text-wrap.m-1.easly-effect(href='/') Home
+          .separator.text-secondary /
+          if (auth)
+            a.text-decoration-none.badge.text-wrap.m-1.easly-effect(href='/settings') Settings
+            .separator.text-secondary /
+            a.text-decoration-none.badge.text-wrap.text-white.bg-danger.m-1.easly-effect(href='/account/logout') Logout
+            .separator.text-secondary /
+            a.text-decoration-none.badge.text-wrap.text-white.bg-danger.m-1.easly-effect.delete_button(href='/account/delete') Delete Account
+            if (auth.is_admin)
+              .separator.text-secondary /
+              a.text-decoration-none.badge.text-wrap.text-white.bg-primary.m-1.easly-effect.delete_button(href='/admin') Pannel
+
+          else
+            a.text-decoration-none.badge.text-wrap.m-1.easly-effect(href='/account/login') Login
+            .separator.text-secondary /
+            a.text-decoration-none.badge.text-wrap.m-1.easly-effect(href='/account/signup') create account
+            .separator.text-secondary /
+            a.text-decoration-none.badge.text-wrap.m-1.easly-effect(href='/account/forget_password') forget password
+

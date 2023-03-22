@@ -1,0 +1,29 @@
+.carousel-inner .carousel-item img {
+  max-height: 600px;
+  filter: brightness(0.5);
+}
+.features .feat .feat-title {
+  color: var(--th-smarted) !important;
+  font-size: 19px;
+}
+
+.features .feat {
+  background-color: #efefef;
+  border-radius: 50px 5px 50px 5px !important;
+  transition-property: opacity, transform;
+  opacity: 0.8;
+}
+
+.features .feat .feat-desc {
+  color: #777;
+  font-weight: lighter;
+}
+
+.features .feat:hover {
+  opacity: 1;
+  transform: rotate(1deg) scale(1.01);
+}
+
+.dark .features .feat {
+  background-color: var(--th-third-c);
+}

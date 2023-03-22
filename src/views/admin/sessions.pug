@@ -1,0 +1,26 @@
+extends ./layout
+include ./components/info-card
+
+block content
+  .table-parent
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">IP</th>
+          <th scope="col">USER</th>
+          <th scope="col">Expires</th>
+        </tr>
+      </thead>
+      <tbody>
+        each row, index in data
+          <tr>
+            th(scope="row")=index+1
+            td=row._id
+            td=row.session.client_ip ? row.session.client_ip : 'Empty'
+            td=row.session.uid ? row.session.uid : 'Empty'
+            td=row.expires
+          </tr>
+      </tbody>
+    </table>

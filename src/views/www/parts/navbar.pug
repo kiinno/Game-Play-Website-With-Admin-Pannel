@@ -1,0 +1,52 @@
+nav.navbar.navbar-expand-md.bg-body-tertiary.mt-0
+  .container
+    //- a.navbar-brand(href='#') #{server_title}
+    button.navbar-toggler.easly-effect(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      i.fa-solid.fa-bars
+
+    if (auth) 
+      .dropdown.d-flex.justify-content-center.align-items-center.auth.order-md-2
+        div.d-flex.align-items-center
+          if (auth.is_admin)
+            div.admin-badge.bg-primary(title="Administrator")
+              i.text-white.fa-solid.fa-check
+          p.username.mb-0.mx-1=auth.first_name
+
+        div.profile-photo.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+          if (auth.image)
+            img.rounded-circle.p-0.border.w-100.h-100(style={'object-fit': 'contain'} src=auth.image)
+          else
+            span.rounded-circle.photed-f.text-uppercase.w-100.h-100.bg-success.text-white.d-inline-flex.justify-content-center.align-items-center=auth.first_name[0]
+
+        ul.dropdown-menu(style="right: 0px;left: initial")
+          li
+            a.dropdown-item.easly-effect(href='#') Profile
+          li
+            a.dropdown-item.easly-effect(href='#') Settings
+          li
+            a.dropdown-item.easly-effect.text-danger(href='/account/logout') Logout
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0.text-capitalize
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='/')
+            i.fa-solid.fa-house
+            span.mx-1 Home
+        li.nav-item
+          a.nav-link(href='/rank') 
+            i.fa-solid.fa-ranking-star
+            span.mx-1 Rank
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            i.fa-solid.fa-cloud-arrow-down
+            span.mx-1 Downloads
+          ul.dropdown-menu
+            li
+              a.dropdown-item.easly-effect(href='/download/client') client
+            li
+              a.dropdown-item.easly-effect(href='/download/patch') patch
+        li.nav-item
+          a.nav-link(href='/requirements') PC requirments
+
+        li.nav-item
+          a.nav-link(href='/shop') Shop
+

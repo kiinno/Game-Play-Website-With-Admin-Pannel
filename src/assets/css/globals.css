@@ -1,0 +1,201 @@
+:root {
+  --th-main-c: #2d1446;
+  --th-secondary-c: #3f51b5;
+  --th-third-c: rebeccapurple;
+  --th-smarted: goldenrod;
+  --darkness: #171a2a;
+}
+
+.dark {
+  --th-main-c: #140721;
+  --th-third-c: #202033;
+  background-color: var(--darkness);
+}
+
+* {
+  font-family: "Mukta", sans-serif;
+}
+p {
+  line-height: 1.6;
+}
+
+.dropdown-toggle::after {
+  color: var(--th-smarted);
+}
+
+.easly-effect {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+html:has(#loader) {
+  overflow: hidden;
+}
+
+#loader #cyrcle {
+  border: 3px solid tomato;
+  border-left-color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  animation: rotate 1s linear 0s infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dark .navbar,
+.dark .dropdown-menu {
+  background-color: var(--th-third-c) !important;
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+
+.dark .dropdown-item:focus,
+.dark .dropdown-item:hover {
+  background-color: var(--th-main-c);
+  padding-left: 1.5rem;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  padding-left: 1.5rem;
+}
+
+.dark .nav-link,
+.dark .dropdown-item {
+  color: #ccc;
+}
+
+.nav-link.active {
+  color: goldenrod !important;
+}
+.dark .navbar-toggler {
+  box-shadow: initial;
+  color: var(--th-smarted) !important;
+  border-color: var(--th-smarted);
+  opacity: 0.7;
+  transition-property: opacity;
+}
+
+.dark .navbar-toggler:hover,
+.dark .navbar-toggler:focus {
+  opacity: 1;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.dropdown-item:hover {
+  color: var(--th-smarted) !important;
+}
+
+.infobar,
+footer {
+  background-color: var(--th-main-c);
+}
+
+.infobar .action-links .badge {
+  background-color: var(--th-third-c);
+  border-radius: 25px;
+}
+
+.infobar .action-links .badge:hover {
+  opacity: 0.8;
+}
+
+.infobar #theme-switch {
+  cursor: pointer;
+}
+.infobar #theme-switch:hover {
+  opacity: 0.6;
+}
+
+.auth .admin-badge {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  outline: 1px dashed white;
+}
+
+.auth .username {
+  color: var(--bs-secondary-color);
+}
+.dark .auth .username {
+  color: #efefef;
+}
+
+input {
+  background-color: #f4f5f5 !important;
+}
+label {
+  font-size: 14px !important;
+}
+.dark .form-title {
+  color: var(--th-smarted) !important;
+  font-weight: 900;
+}
+.dark input {
+  background-color: var(--th-third-c) !important;
+  border-color: var(--th-main-c);
+  color: #efefef !important;
+}
+.dark label {
+  color: var(--th-smarted) !important;
+}
+
+.dark input:focus {
+  border-color: var(--th-main-c);
+}
+.fulled-fixed {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.profile-photo {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px dashed #eee;
+  border-radius: 50%;
+}
+.profile-photo .photed-f {
+  font-weight: 300;
+}
+.table {
+  border-width: 1px;
+}
+.dark .table-parent {
+  background-color: var(--darkness) !important;
+}
+.dark .table-parent .table {
+  border-color: var(--th-smarted);
+}
+.dark .table td,
+tbody tr th {
+  color: #888 !important;
+}
+.dark .table thead {
+  color: var(--th-smarted) !important;
+}

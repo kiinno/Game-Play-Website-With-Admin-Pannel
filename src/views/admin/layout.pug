@@ -1,0 +1,19 @@
+include ../www/parts/infobar
+doctype
+html(lang="en")
+  head
+    include ../components/meta
+    block extraStyles
+      include ../components/styles
+      link(rel="stylesheet", href=static_url('css/admin.css'))
+  body
+    #loader
+      #cyrcle
+    block infobar
+      +Topbar()
+    main.d-flex
+      include ./parts/sidebar
+      div.content
+        block content
+    block extraScripts
+      include ../components/scripts
