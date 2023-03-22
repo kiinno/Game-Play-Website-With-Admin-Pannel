@@ -6,11 +6,9 @@ append extraStyles
 block content
   #carouselExample.carousel()
     .carousel-inner
-      .carousel-item.active
-        img.d-block.w-100( src='https://www.matrix219.com/index/wp-content/uploads/2018/05/%D8%A7%D9%84%D8%A5%D9%81%D8%B7%D8%A7%D8%B1-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D8%B1%D9%85%D8%B6%D8%A7%D9%86.jpg' alt='curousel-img')
       - var counter = 1
       while counter < 4
-        .carousel-item
+        .carousel-item(class=(counter == 1 ? 'active' : null))
           img.d-block.w-100(src=static_url('imgs/carousel-' + counter++ + '.jpg'), alt='curousel-img')
     button.carousel-control-prev(type='button' data-bs-target='#carouselExample' data-bs-slide='prev')
       span.carousel-control-prev-icon(aria-hidden='true')

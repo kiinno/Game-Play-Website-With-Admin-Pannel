@@ -22,7 +22,7 @@ module.exports = async (options) => {
         ? ""
         : form_data[field_name];
     },
-
+    req: options.req,
     server_title: configs.server_title,
     route_title: "",
     page: null,

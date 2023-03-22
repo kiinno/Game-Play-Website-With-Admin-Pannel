@@ -64,8 +64,4 @@ app.use("/admin", [loginRequired(true), adminRequired("/")], adminRoute); // Adm
  * Ends on 00/00/2023
  */
 
-app.listen(configs.port, configs.host, () => {
-  console.log(
-    `Server is running on port ${configs.port} visit https://${configs.host}:${configs.port}/`
-  );
-});
+app.listen(configs.port);

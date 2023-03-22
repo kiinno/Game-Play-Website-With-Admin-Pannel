@@ -116,6 +116,10 @@ footer {
   border-radius: 25px;
 }
 
+.infobar .active {
+  background-color: var(--th-smarted) !important;
+}
+
 .infobar .action-links .badge:hover {
   opacity: 0.8;
 }

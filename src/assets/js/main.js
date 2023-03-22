@@ -23,6 +23,9 @@ window.addEventListener("load", (_) => {
     }
   });
   document.querySelectorAll("a").forEach((hyperlink) => {
+    if (hyperlink.href === window.location.href) {
+      hyperlink.classList.add("active");
+    }
     hyperlink.addEventListener("click", (_) =>
       _.target.href === window.location.href ? _.preventDefault() : true
     );
